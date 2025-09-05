@@ -7,8 +7,10 @@ public class Client{
 		DataInputStream in = null;
 		DataOutputStream out = null;
 
-		try{
+		try{	
+			System.out.println("Initializing a socket");
 			socket = new Socket("127.0.0.1", 5000);
+			System.out.println("Socket initilised. Server found.");
 			
 			//this takes input from terminal
 			in = new DataInputStream(System.in);
@@ -45,10 +47,13 @@ public class Client{
 			out.close(); //to close the output stream
 			socket.close(); //finally we'll close the socket itself to terminate the connection
 		}
+
 		catch(Exception e){
 			System.out.println(e);
 			return;
 		}
+
+		System.out.println("Socket closed successfully.");
 
 	}
 }

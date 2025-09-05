@@ -11,10 +11,13 @@ public class Main{
 		try{
 			//making a new server socket
 			serverSocket = new ServerSocket(port);
+			System.out.println("Server is waiting for client...");
 			
 			//i am not sure why we are putting
 			//the server socket with accept method inside the socket?
 			socket = serverSocket.accept();
+			System.out.println("Found client.");
+			System.out.println("Server listening at port 5000");
 		}
 		catch(Exception e){
 			System.out.println(e);
@@ -36,7 +39,7 @@ public class Main{
 
 		String msg = "";
 		
-		System.out.println("server is listening at port 5000");
+		System.out.println("parsing requests from client");
 
 		//the while loop will keep listening to the socket
 		while(!msg.equals("over")){
@@ -60,5 +63,7 @@ public class Main{
 			System.out.println(e);
 			return;
 		}
+
+		System.out.println("Socket closed successfully");
 	}
 }
