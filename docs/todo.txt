@@ -1,0 +1,6 @@
+socket --> bind to port --> listen --> recieve req 
+|--> parse req --> encode response --> send response
+
+how to setup a TCP/IP connection?
+how to bind my code to a port?
+how to make it listen to http requests?
